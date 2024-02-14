@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diabetes Prediction</title>
+</head>
+<body>
+    <h1>Diabetes Prediction</h1>
+    <form action="/predict" method="post">
+        <!-- Add input fields for each column in your dataset -->
+        <label>Blood pressure:</label>
+        <input type="number" name="HighBP" min="0" max="1" required><br>
+
+        <label>Cholesterol:</label>
+        <input type="number" name="HighChol" min="0" max="1"  required><br>
+
+        <label>BMI in float:</label>
+        <input type="number" name="BMI" min="12" max="98" step="0.1" required><br>
+
+        <label>Smoker:</label>
+        <select name="Smoker" required>
+            <option value="0">No</option>
+            <option value="1">Yes</option>
+        </select><br>
+
+        <label>Stroke:</label>
+        <select name="Stroke" required>
+            <option value="0">No</option>
+            <option value="1">Yes</option>
+        </select><br>
+
+        <label>Heart Disease or Attack:</label>
+        <select name="HeartDiseaseorAttack" required>
+            <option value="0">No</option>
+            <option value="1">Yes</option>
+        </select><br>
+
+        <label>Physical Activity:</label>
+        <input type="number" name="PhysActivity" min="0" max="1" required><br>
+
+        <label>Heavy Alcohol Consumption:</label>
+        <input type="number" name="HvyAlcoholConsump" min="0" max="1" required><br>
+
+        <label>No Doctor's Visit Because of Cost:</label>
+        <input type="number" name="NoDocbcCost" min="0" max="1" required><br>
+
+        <label>General Health:</label>
+        <input type="number" name="GenHlth" min="1" max="5" required><br>
+
+        <label>Mental Health:</label>
+        <input type="number" name="MentHlth" min="0" max="30" required><br>
+
+        <label>Physical Health:</label>
+        <input type="number" name="PhysHlth" min="0" max="30" required><br>
+
+        <label>Difficulty Walking:</label>
+        <select name="DiffWalk"required>
+            <option value="0">No</option>
+            <option value="1">Yes</option>
+        </select><br>
+
+        <label>Age:</label>
+        <input type="number" name="Age" min="1" max="13" required><br>
+
+        <label>Education:</label>
+        <input type="number" name="Education" min="1" max="6" required><br>
+
+        <label>Income:</label>
+        <input type="number" name="Income" min="1" max="8" required><br>
+
+        <button type="submit">Predict</button>
+    </form>
+</body>
+</html>

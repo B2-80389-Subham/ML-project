@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flask ML App - Result</title>
+</head>
+<body>
+    <h1>Prediction Result</h1>
+    <p>
+        {% if prediction == 1 %}
+            You might have diabetes! Please consult your doctor.
+        {% else %}
+            The predicted output is: {{ prediction }}. Sweet!
+        {% endif %}
+    </p>
+    <a href="/">Go Back</a>
+</body>
+</html>
