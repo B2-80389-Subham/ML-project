@@ -1,9 +1,100 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+<!--    <title>Flask ML App - Result</title>-->
+<!--    <style>-->
+<!--        body {-->
+<!--            display: flex;-->
+<!--            flex-direction: column;-->
+<!--            align-items: center;-->
+<!--            justify-content: center;-->
+<!--            min-height: 100vh;-->
+<!--            margin: 0;-->
+<!--            font-family: 'Arial', sans-serif;-->
+<!--            background-color: #206b64 ; /* Light gray background color */-->
+<!--            color: #333; /* Dark text color */-->
+<!--        }-->
+
+<!--        h1 {-->
+<!--            color: #131414;-->
+<!--        }-->
+
+<!--        p {-->
+<!--            max-width: 400px;-->
+<!--            margin: 20px;-->
+<!--            background-color: #fafbfc;-->
+<!--            padding: 15px;-->
+<!--            border-radius: 8px;-->
+<!--            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);-->
+
+<!--        }-->
+
+<!--        a {-->
+<!--            text-decoration: none;-->
+<!--            color: #f70f0f;-->
+<!--        }-->
+
+<!--        a:hover {-->
+<!--            text-decoration: underline;-->
+<!--        }-->
+<!--    </style>-->
+<!--</head>-->
+<!--<body>-->
+<!--    <h1>Prediction Result</h1>-->
+<!--    <p>-->
+<!--        {% if prediction == 1 %}-->
+<!--            You might have diabetes! Please consult your doctor.-->
+<!--        {% else %}-->
+<!--            The predicted output is: {{ prediction }} u r safe!-->
+<!--        {% endif %}-->
+<!--    </p>-->
+<!--    <a href="/">Go Back</a>-->
+<!--</body>-->
+<!--</html>-->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Flask ML App - Result</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #206b64; /* Light gray background color */
+            color: #333; /* Dark text color */
+        }
+
+        h1 {
+            color: #131414;
+        }
+
+        p {
+            max-width: 400px;
+            margin: 20px;
+            background-color: #fafbfc;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        a {
+            text-decoration: none;
+            color: #f70f0f;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
     <h1>Prediction Result</h1>
@@ -11,7 +102,7 @@
         {% if prediction == 1 %}
             You might have diabetes! Please consult your doctor.
         {% else %}
-            The predicted output is: {{ prediction }}. Sweet!
+            The predicted output is: {{ prediction }} u r safe!
         {% endif %}
     </p>
     <a href="/">Go Back</a>

@@ -4,72 +4,204 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Diabetes Prediction</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #206b64;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .separator {
+            background-color: #2e4057;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        header, footer {
+            background-color: #b5ab9f;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+            width: 100%;
+            margin-bottom: 10px;
+        }
+
+        main {
+            display: grid;
+            place-items: center;
+            width: 100%;
+            padding: 10px;
+        }
+
+        form {
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 600px;
+            text-align: left;
+            margin: 10px;
+            display: grid;
+            gap: 16px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        select,
+        input {
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 12px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        footer {
+            margin-top: auto;
+        }
+    </style>
 </head>
 <body>
-    <h1>Diabetes Prediction</h1>
-    <form action="/predict" method="post">
-        <!-- Add input fields for each column in your dataset -->
-        <label>Blood pressure:</label>
-        <input type="number" name="HighBP" min="0" max="1" required><br>
+    <div class="separator">
+        <h2>Diabetes Prediction</h2>
+    </div>
+    <main>
+        <form action="/predict" method="post">
+            <label for="HighBP">Blood pressure:</label>
+            <select name="HighBP" id="HighBP" required>
+                <option value="0">No</option>
+                <option value="1">Yes</option>
+            </select>
 
-        <label>Cholesterol:</label>
-        <input type="number" name="HighChol" min="0" max="1"  required><br>
+            <label for="HighChol">Cholesterol:</label>
+            <select name="HighChol" id="HighChol" required>
+                <option value="0">No</option>
+                <option value="1">Yes</option>
+            </select>
 
-        <label>BMI in float:</label>
-        <input type="number" name="BMI" min="12" max="98" step="0.1" required><br>
+            <label for="BMI">BMI in float (12-98):</label>
+            <input type="number" name="BMI" id="BMI" min="12" max="98" step="0.1" required>
 
-        <label>Smoker:</label>
-        <select name="Smoker" required>
-            <option value="0">No</option>
-            <option value="1">Yes</option>
-        </select><br>
+            <label for="Smoker">Smoker:</label>
+            <select name="Smoker" id="Smoker" required>
+                <option value="0">No</option>
+                <option value="1">Yes</option>
+            </select>
 
-        <label>Stroke:</label>
-        <select name="Stroke" required>
-            <option value="0">No</option>
-            <option value="1">Yes</option>
-        </select><br>
+            <label for="Stroke">Stroke:</label>
+            <select name="Stroke" id="Stroke" required>
+                <option value="0">No</option>
+                <option value="1">Yes</option>
+            </select>
 
-        <label>Heart Disease or Attack:</label>
-        <select name="HeartDiseaseorAttack" required>
-            <option value="0">No</option>
-            <option value="1">Yes</option>
-        </select><br>
+            <label for="HeartDiseaseorAttack">Heart Disease or Attack:</label>
+            <select name="HeartDiseaseorAttack" id="HeartDiseaseorAttack" required>
+                <option value="0">No</option>
+                <option value="1">Yes</option>
+            </select>
 
-        <label>Physical Activity:</label>
-        <input type="number" name="PhysActivity" min="0" max="1" required><br>
+            <label for="PhysActivity">Physical Activity:</label>
+            <select name="PhysActivity" id="PhysActivity" required>
+                <option value="0">No</option>
+                <option value="1">Yes</option>
+            </select>
 
-        <label>Heavy Alcohol Consumption:</label>
-        <input type="number" name="HvyAlcoholConsump" min="0" max="1" required><br>
+            <label for="HvyAlcoholConsump">Heavy Alcohol Consumption:</label>
+            <select name="HvyAlcoholConsump" id="HvyAlcoholConsump" required>
+                <option value="0">No</option>
+                <option value="1">Yes</option>
+            </select>
 
-        <label>No Doctor's Visit Because of Cost:</label>
-        <input type="number" name="NoDocbcCost" min="0" max="1" required><br>
+            <label for="NoDocbcCost">No Doctor's Visit Because of Cost:</label>
+            <select name="NoDocbcCost" id="NoDocbcCost" required>
+                <option value="0">No</option>
+                <option value="1">Yes</option>
+            </select>
 
-        <label>General Health:</label>
-        <input type="number" name="GenHlth" min="1" max="5" required><br>
+            <label for="GenHlth">General Health:</label>
+            <select name="GenHlth" id="GenHlth" required>
+                <option value="1">Very Poor</option>
+                <option value="2">Poor</option>
+                <option value="3">Fair</option>
+                <option value="4">Good</option>
+                <option value="5">Excellent</option>
+            </select>
 
-        <label>Mental Health:</label>
-        <input type="number" name="MentHlth" min="0" max="30" required><br>
+            <label for="MentHlth">Mental Health:</label>
+            <select name="MentHlth" id="MentHlth" required>
+                <option value="0">Not Good</option>
+                <option value="5">Average</option>
+                <option value="10">Good</option>
+                <option value="15">Very Good</option>
+                <option value="20">Excellent</option>
+                <option value="25">Outstanding</option>
+                <option value="30">Exceptional</option>
+            </select>
 
-        <label>Physical Health:</label>
-        <input type="number" name="PhysHlth" min="0" max="30" required><br>
+            <label for="PhysHlth">Physical Health:</label>
+            <select name="PhysHlth" id="PhysHlth" required>
+                <option value="0">Not Good</option>
+                <option value="5">Average</option>
+                <option value="10">Good</option>
+                <option value="15">Very Good</option>
+                <option value="20">Excellent</option>
+                <option value="25">Outstanding</option>
+                <option value="30">Exceptional</option>
+            </select>
 
-        <label>Difficulty Walking:</label>
-        <select name="DiffWalk"required>
-            <option value="0">No</option>
-            <option value="1">Yes</option>
-        </select><br>
+            <label for="DiffWalk">Difficulty Walking:</label>
+            <select name="DiffWalk" id="DiffWalk" required>
+                <option value="0">No</option>
+                <option value="1">Yes</option>
+            </select>
 
-        <label>Age:</label>
-        <input type="number" name="Age" min="1" max="13" required><br>
+            <label for="Age">Age:</label>
+            <input type="number" name="Age" id="Age" min="1" max="13" required>
 
-        <label>Education:</label>
-        <input type="number" name="Education" min="1" max="6" required><br>
+            <label for="Education">Education:</label>
+            <input type="number" name="Education" id="Education" min="1" max="6" required>
 
-        <label>Income:</label>
-        <input type="number" name="Income" min="1" max="8" required><br>
+            <label for="Income">Income:</label>
+            <input type="number" name="Income" id="Income" min="1" max="8" required>
 
-        <button type="submit">Predict</button>
-    </form>
+            <button type="submit">Predict</button>
+        </form>
+    </main>
+    <footer>
+        <!-- Footer content goes here -->
+    </footer>
 </body>
 </html>
+
+
+
